@@ -21,7 +21,7 @@ jobs:
       - name: Helm - chart-releaser
         uses: helm/chart-releaser-action@v1.6.0
         with:
-          charts_dir: chart
+          charts_dir: ./
           pages_branch: gh-pages
           config: .github/cr.yaml
         env:
