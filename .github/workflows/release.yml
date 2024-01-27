@@ -65,6 +65,6 @@ jobs:
           pages_branch: gh-pages
           mark_as_latest: false
           skip_existing: true
-          config: .github/cr.yaml
+          config: ./charts/cr.yaml
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
