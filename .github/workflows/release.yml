@@ -1,10 +1,11 @@
-name: Release
+name: Release - Helm
 on:
   release:
     types: [published]
 
 jobs:
-  release:
+  helm-release:
+    name: Helm - Release
     runs-on: ubuntu-latest
     permissions:
       contents: write
