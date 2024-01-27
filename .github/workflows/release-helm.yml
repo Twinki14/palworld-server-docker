@@ -2,7 +2,7 @@ name: Release - Helm
 
 on:
   push:
-    branches: [main]
+    branches: [main, helm-repo]
     paths: ["charts/**"]
 
 jobs:
