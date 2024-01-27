@@ -1,12 +1,16 @@
-name: Helm
+name: Release - Helm
 
 on:
-  release:
-    types: [published]
+  push:
+    branches: [main]
+    paths: ["charts/**"]
 
 jobs:
-  release:
+  release-helm:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -23,6 +27,7 @@ jobs:
         with:
           charts_dir: charts
           pages_branch: gh-pages
+          mark_as_latest: false
           config: .github/cr.yaml
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
